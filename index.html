@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MetaStackerBandit - Trading Signal Pipeline Dashboard</title>
+  <link rel="stylesheet" href="index.css">
+  <!-- Chart.js CDN for interactive visualization -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Glowing Background Blobs for Premium Glassmorphism Depth -->
+  <div class="bg-blob blob-purple"></div>
+  <div class="bg-blob blob-cyan"></div>
+  <div class="bg-blob blob-emerald"></div>
+
+  <header>
+    <div class="logo-section">
+      <h1>🚀 MetaStackerBandit</h1>
+      <p>Trading Signal Batch Pipeline Dashboard</p>
+    </div>
+    <div class="status-badge">
+      <div id="statusDot" class="status-dot"></div>
+      <span id="statusText">Ready</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- Left Column: Controls & Configuration -->
+    <section class="glass-panel">
+      <h2 class="panel-title">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+        </svg>
+        Pipeline Configuration
+      </h2>
+
+      <!-- Version -->
+      <div class="input-group">
+        <label for="configVersion">Pipeline Version</label>
+        <input type="text" id="configVersion" class="input-field" value="v1">
+      </div>
+
+      <!-- Seed -->
+      <div class="input-group">
+        <label for="configSeed">Random Seed</label>
+        <input type="number" id="configSeed" class="input-field" value="42">
+      </div>
+
+      <!-- Window Size -->
+      <div class="input-group">
+        <label for="configWindow">Rolling Window (Size)</label>
+        <input type="number" id="configWindow" class="input-field" value="5" min="2" max="100">
+      </div>
+
+      <!-- File Uploader -->
+      <div class="input-group">
+        <label>Dataset (CSV file)</label>
+        <div id="uploadZone" class="upload-zone">
+          <div class="upload-icon">📥</div>
+          <p id="uploadPrompt">Drag & drop <b>data.csv</b> here or click to browse</p>
+          <input type="file" id="fileInput" accept=".csv" style="display: none;">
+          <div id="fileInfo" class="file-info"></div>
+        </div>
+      </div>
+
+      <!-- Run Button -->
+      <button id="runBtn" class="btn" disabled>
+        ⚡ Run Batch Job
+      </button>
+    </section>
+
+    <!-- Right Column: Visual Dashboard -->
+    <section class="dashboard-content">
+      <!-- Metrics Card Grid -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <span class="metric-label">Status</span>
+          <span id="metricStatus" class="metric-value">-</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">Rows Processed</span>
+          <span id="metricRows" class="metric-value cyan">-</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">Signal Rate</span>
+          <span id="metricSignalRate" class="metric-value green">-</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">Latency</span>
+          <span id="metricLatency" class="metric-value purple">-</span>
+        </div>
+      </div>
+
+      <!-- Interactive Chart Panel -->
+      <div class="glass-panel">
+        <div class="chart-header">
+          <h2 class="panel-title" style="border: none; padding: 0; margin: 0;">
+            📈 Close vs Rolling Mean Signal
+          </h2>
+          <span id="chartSub">Showing first 250 rows for performance visualization</span>
+        </div>
+        <div class="chart-container">
+          <canvas id="signalChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Logs & JSON Details -->
+      <div class="results-bottom">
+        <!-- Execution Logs -->
+        <div class="terminal-panel glass-panel">
+          <div class="terminal-header">
+            <h2 class="panel-title" style="border: none; padding: 0; margin: 0;">
+              🖥️ Live Execution Logs
+            </h2>
+            <button id="clearLogsBtn" class="btn btn-secondary">Clear</button>
+          </div>
+          <div id="terminal" class="terminal">
+            <div class="log-line info">Dashboard ready. Please upload data.csv to start the pipeline.</div>
+          </div>
+        </div>
+
+        <!-- Metrics JSON Output -->
+        <div class="terminal-panel glass-panel">
+          <div class="terminal-header">
+            <h2 class="panel-title" style="border: none; padding: 0; margin: 0;">
+              📄 Output (metrics.json)
+            </h2>
+            <button id="downloadJsonBtn" class="btn btn-secondary" disabled>Download</button>
+          </div>
+          <div id="jsonOutput" class="terminal" style="color: #67e8f9; white-space: pre-wrap; max-height: 250px; min-height: 200px;">{
+  "status": "idle",
+  "message": "Awaiting pipeline execution..."
+}</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

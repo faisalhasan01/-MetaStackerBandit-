@@ -1,0 +1,10 @@
+2026-07-15 15:47:45,118 - INFO - Job started
+2026-07-15 15:47:45,118 - INFO - Loading config from config.yaml
+2026-07-15 15:47:45,118 - INFO - Config loaded + validated (seed=42/window=5/version=v1)
+2026-07-15 15:47:45,118 - INFO - Random seed set to 42
+2026-07-15 15:47:45,118 - INFO - Loading dataset from data.csv
+2026-07-15 15:47:45,134 - INFO - Rows loaded: 10000
+2026-07-15 15:47:45,134 - INFO - Using column 'Close' for Close price calculations
+2026-07-15 15:47:45,134 - INFO - Processing steps (rolling mean, signal generation)
+2026-07-15 15:47:45,134 - INFO - Metrics summary: rows_processed=10000, signal_rate=0.4990, latency_ms=15
+2026-07-15 15:47:45,134 - INFO - Job end + status: success
