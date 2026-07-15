@@ -40,6 +40,21 @@ python run.py --input data.csv --config config.yaml --output metrics.json --log-
 
 ---
 
+## Interactive Dashboard UI
+
+This project includes a premium, dark-mode visual web dashboard that lets you configure parameters, load datasets (supporting drag-and-drop), visualize prices and buy signals, and view execution logs in real-time.
+
+### How to Run the Dashboard:
+1. In your terminal, make sure you are in the project folder and run:
+   ```bash
+   python -m http.server 8000
+   ```
+2. Open your web browser and go to:
+   **[http://localhost:8000/index.html](http://localhost:8000/index.html)**
+3. Adjust the window/seed config values, click **⚡ Run Batch Job**, and explore the interactive Chart.js price trend visualization.
+
+---
+
 ## Docker Build & Run Commands
 
 You can build and run the application inside a container.
