@@ -32,25 +32,44 @@ body {
   display: flex;
   flex-direction: column;
   background-image: 
-    radial-gradient(circle at 50% 50%, #0d1127 0%, var(--bg-color) 100%);
+    radial-gradient(circle at 0% 0%, rgba(167, 139, 250, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 100% 100%, rgba(34, 211, 238, 0.15) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, #080c1b 0%, #030611 100%);
   background-attachment: fixed;
   overflow-x: hidden;
   position: relative;
 }
 
+/* Premium tech grid overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: center;
+  z-index: -2;
+  pointer-events: none;
+}
+
 /* Glowing Background Blobs for Glassmorphism Depth */
 .bg-blob {
   position: absolute;
-  width: 45vw;
-  height: 45vw;
-  max-width: 700px;
-  max-height: 700px;
+  width: 50vw;
+  height: 50vw;
+  max-width: 800px;
+  max-height: 800px;
   border-radius: 50%;
-  filter: blur(120px);
+  filter: blur(140px);
   z-index: -1;
   pointer-events: none;
-  opacity: 0.20;
-  animation: float-blob 20s ease-in-out infinite alternate;
+  opacity: 0.25;
+  animation: float-blob 22s ease-in-out infinite alternate;
 }
 
 .blob-purple {
@@ -67,10 +86,10 @@ body {
 }
 
 .blob-emerald {
-  top: 35%;
-  left: 25%;
+  top: 30%;
+  left: 15%;
   background: radial-gradient(circle, var(--accent-green) 0%, transparent 70%);
-  opacity: 0.10;
+  opacity: 0.12;
   animation-delay: -10s;
 }
 
@@ -79,7 +98,7 @@ body {
     transform: translate(0, 0) scale(1);
   }
   100% {
-    transform: translate(80px, 50px) scale(1.1);
+    transform: translate(100px, 60px) scale(1.15);
   }
 }
 
