@@ -15,6 +15,17 @@ This repository implements a minimal, reproducible, and observable MLOps-style b
 
 ---
 
+## Prerequisites & Setup (For Another Laptop)
+
+To run this project on any other laptop, make sure the system has **Python 3.9+** and/or **Docker** installed.
+
+### 1. Clone the Repository
+Open a terminal (Command Prompt, PowerShell, or Git Bash) and run:
+```bash
+git clone https://github.com/faisalhasan01/-MetaStackerBandit-.git
+cd -MetaStackerBandit-
+```
+
 ## Local Run Instructions
 
 ### 1. Set Up Environment
