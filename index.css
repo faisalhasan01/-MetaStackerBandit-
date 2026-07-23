@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --bg-color: #030712;
-  --panel-bg: rgba(11, 15, 26, 0.72);
-  --panel-border: rgba(255, 255, 255, 0.08);
+  --bg-color: #040815;
+  --panel-bg: rgba(10, 15, 30, 0.75);
+  --panel-border: rgba(255, 255, 255, 0.06);
   --text-primary: #f3f4f6;
   --text-secondary: #9ca3af;
-  --accent-purple: #a78bfa;
-  --accent-purple-glow: rgba(167, 139, 250, 0.4);
-  --accent-cyan: #22d3ee;
-  --accent-cyan-glow: rgba(34, 211, 238, 0.4);
+  --accent-purple: #c084fc;
+  --accent-purple-glow: rgba(192, 132, 252, 0.35);
+  --accent-cyan: #38bdf8;
+  --accent-cyan-glow: rgba(56, 189, 248, 0.35);
   --accent-green: #34d399;
   --accent-green-glow: rgba(52, 211, 153, 0.3);
-  --accent-red: #fb7185;
-  --console-bg: #020617;
-  --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  --accent-red: #f43f5e;
+  --console-bg: rgba(2, 6, 23, 0.85);
+  --shadow-lg: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
   --transition-speed: 0.3s;
 }
 
